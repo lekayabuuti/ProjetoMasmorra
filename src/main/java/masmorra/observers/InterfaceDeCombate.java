@@ -1,4 +1,6 @@
 package masmorra.observers;
 
-public class InterfaceDeCombate {
+
+public class InterfaceDeCombate  {
+    
 }
