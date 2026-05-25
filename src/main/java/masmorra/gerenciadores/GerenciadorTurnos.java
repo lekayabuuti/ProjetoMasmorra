@@ -3,7 +3,7 @@ package masmorra.gerenciadores;
 public class GerenciadorTurnos {
 
     private static GerenciadorTurnos instancia;
-    private int turno = 0;
+    private int turno = 1;
 
     private GerenciadorTurnos() {}
 

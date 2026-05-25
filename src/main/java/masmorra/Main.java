@@ -1,4 +1,5 @@
 package masmorra;
+import masmorra.gerenciadores.GerenciadorTurnos;
 import masmorra.model.Heroi;
 import masmorra.observers.*;
 
@@ -6,23 +7,19 @@ import java.util.Scanner;
 
 public class Main {
 
-     public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         Heroi heroi = new Heroi("Aldric");
+        GerenciadorTurnos turnos = GerenciadorTurnos.getInstance();
 
         System.out.println("=== A MASMORRA REAGE ===");
         System.out.println("Observers registrados: HUD, Nível, Poção, Log\n");
 
-        int turno = 1;
-
-       while (heroi.getVida() > 0 && turno <= 15) {
-           System.out.println("TURNO: " + turno);
-
-
-           System.out.println("Rodando dado... ");
+        while (heroi.getVida() > 0 && turnos.getTurno() <= 15) {
+            System.out.println("TURNO: " + turnos.getTurno());
+            System.out.println("Rodando dado... ");
             int numeroAleatorio = (int) (Math.random() * 4) + 1;
-           System.out.println("Resultado do dado: " + numeroAleatorio);
+            System.out.println("Resultado do dado: " + numeroAleatorio);
 
             switch (numeroAleatorio) {
                 case 1 -> heroi.receberDano(25);
@@ -35,13 +32,13 @@ public class Main {
             System.out.println("\nPressione ENTER para passar o turno...");
             scanner.nextLine();
 
-            turno++;
+            turnos.avancar();
         }
 
         if (heroi.getVida() <= 0) {
-            System.out.println("\n>>> "+heroi.getNome()+" caiu. Fim de jogo.");
+            System.out.println("\n>>> " + heroi.getNome() + " caiu. Fim de jogo.");
         } else {
-            System.out.println("\n>>> "+heroi.getNome()+" ganhou.");
+            System.out.println("\n>>> " + heroi.getNome() + " ganhou.");
         }
 
         System.out.println("\n=== FIM DA SESSÃO ===");
