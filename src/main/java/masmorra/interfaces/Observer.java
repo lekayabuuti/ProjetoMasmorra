@@ -1,6 +1,6 @@
 package masmorra.interfaces;
 
-import masmorra.TipoEvento.TipoEvento;
+import masmorra.enumerations.TipoEvento;
 import masmorra.model.Heroi;
 
 public interface Observer {

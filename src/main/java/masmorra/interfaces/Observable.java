@@ -1,6 +1,6 @@
 package masmorra.interfaces;
 
-import masmorra.TipoEvento.TipoEvento;
+import masmorra.enumerations.TipoEvento;
 
 public interface Observable {
     void registrar(Observer observer);

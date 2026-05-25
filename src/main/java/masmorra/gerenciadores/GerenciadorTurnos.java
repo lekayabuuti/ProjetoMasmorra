@@ -1,4 +1,4 @@
-package masmorra.gerenciador;
+package masmorra.gerenciadores;
 
 public class GerenciadorTurnos {
 
