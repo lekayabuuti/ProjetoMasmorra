@@ -16,7 +16,7 @@ public class Main {
 
         int turno = 1;
 
-       while (heroi.getVida() > 0) {
+       while (heroi.getVida() > 0 && turno <= 15) {
            System.out.println("TURNO: " + turno);
 
 
@@ -25,10 +25,10 @@ public class Main {
            System.out.println("Resultado do dado: " + numeroAleatorio);
 
             switch (numeroAleatorio) {
-                case 1 -> heroi.receberDano();
-                case 2 -> heroi.curar();
-                case 3 -> heroi.ganharExperiencia();
-                case 4 -> heroi.gastarMana();
+                case 1 -> heroi.receberDano(25);
+                case 2 -> heroi.curar(7);
+                case 3 -> heroi.ganharExperiencia(25);
+                case 4 -> heroi.gastarMana(5);
                 default -> System.out.println("Opção inválida.");
             }
 
@@ -38,8 +38,10 @@ public class Main {
             turno++;
         }
 
-        if (heroi.getVida() == 0) {
-            System.out.println("\n>>> Aldric caiu. Fim de jogo.");
+        if (heroi.getVida() <= 0) {
+            System.out.println("\n>>> "+heroi.getNome()+" caiu. Fim de jogo.");
+        } else {
+            System.out.println("\n>>> "+heroi.getNome()+" ganhou.");
         }
 
         System.out.println("\n=== FIM DA SESSÃO ===");

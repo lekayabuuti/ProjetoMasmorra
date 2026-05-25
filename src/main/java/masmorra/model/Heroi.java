@@ -23,20 +23,20 @@ public class Heroi {
         this.experiencia = 0;
     }
 
-    public void receberDano() {
-        this.vida = Math.max(0, this.vida - 25);
+    public void receberDano(int quantidade) {
+        this.vida = Math.max(0, this.vida - quantidade);
     }
 
-    public void curar() {
-        this.vida = Math.min(100, this.vida + 7);
+    public void curar(int quantidade) {
+        this.vida = Math.min(100, this.vida + quantidade);
     }
 
-    public void ganharExperiencia() {
-        this.experiencia += 25;
+    public void ganharExperiencia(int quantidade) {
+        this.experiencia += quantidade;
     }
 
-    public void gastarMana() {
-        this.mana = Math.max(0, this.mana - 5);
+    public void gastarMana(int quantidade) {
+        this.mana = Math.max(0, this.mana - quantidade);
     }
 
     public String getNome()       { return nome; }
