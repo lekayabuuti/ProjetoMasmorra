@@ -1,10 +1,5 @@
 package masmorra.observers;
 
-import masmorra.enumerations.TipoEvento;
-import masmorra.gerenciadores.GerenciadorTurnos;
-import masmorra.interfaces.Observer;
-import masmorra.model.Heroi;
-
 import java.util.*;
 
 public class LogDeBatalha {

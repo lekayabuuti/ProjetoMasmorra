@@ -1,9 +1,5 @@
 package masmorra.model;
 
-import masmorra.interfaces.Observer;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Heroi {
 
@@ -12,8 +8,6 @@ public class Heroi {
     private int mana;
     private int nivel;
     private int experiencia;
-
-    private List<Observer> observers = new ArrayList<>();
 
     public Heroi(String nome) {
         this.nome = nome;
